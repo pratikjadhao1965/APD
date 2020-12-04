@@ -1,0 +1,115 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>APD</groupId>
+    <artifactId>APD</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <properties>
+		<java.source.version>1.8</java.source.version>
+		<java.target.version>1.8</java.target.version>
+		<groups></groups>
+		<timeoutInSeconds>15</timeoutInSeconds>
+		<dataproviderThreadCount>3</dataproviderThreadCount>
+		<threadCount>1</threadCount>
+	</properties>
+    <build>
+    <plugins>
+    	<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.8.0</version>
+			<configuration>
+				<source>${java.source.version}</source>
+				<target>${java.target.version}</target>
+			</configuration>
+		</plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.20</version>
+		    <configuration>
+				<systemPropertyVariables>
+					<groups></groups>
+					<timeoutInSeconds></timeoutInSeconds>
+					<dataproviderThreadCount></dataproviderThreadCount>
+					<threadCount></threadCount>
+				</systemPropertyVariables>
+				<parallel>methods</parallel>
+				<threadCount>${threadCount}</threadCount>
+				<groups>${groups}</groups>
+				<properties>
+					<property>
+						<name>dataproviderthreadcount</name>
+						<value>${dataproviderThreadCount}</value>
+					</property>
+				</properties>
+			</configuration>
+		</plugin>
+    </plugins>
+    </build>
+    <dependencies>
+    		<dependency>
+			<groupId>com.xpanxion.taf</groupId>
+			<artifactId>taf-selenium-framework</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+        		<dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		    <version>4.12</version>
+		    <scope>test</scope>
+		</dependency>	
+     	        <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<version>2.8.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-java-commons -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-java-commons</artifactId>
+			<version>2.8.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+	<!-- 	<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>3.1.5</version>
+		</dependency> -->
+		<!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>4.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.17</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.17</version>
+		</dependency>
+			
+		
+		<dependency>
+			<groupId>com.xpanxion.taf</groupId>
+			<artifactId>reportengine</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>	
+		<dependency>
+			<groupId>com.qainnovation</groupId>
+			<artifactId>testlytic-testng</artifactId>
+			<version>1.0</version>
+		</dependency>	
+    </dependencies>
+    </project>
