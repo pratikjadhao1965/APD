@@ -8,8 +8,8 @@ import org.testng.Assert;
 
 public class APDTestCase extends BaseTest {
 		
- 	@Test(description="This is Login",groups={"APD","Login"})
-    public void testLogin() {
+ 	@Test(description="This is Register",groups={"APD","Register"})
+    public void testRegister() {
      
           	    		    		    				    	    
     	 SoftAssert softassert=new SoftAssert();
